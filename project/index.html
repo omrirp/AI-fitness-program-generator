@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <!--Import the Exercises DB-->
+        <script src="exercises.js"></script>
+        <!--Import CSS file-->
+        <link rel="stylesheet" href="style.css" />
+        <!--Import main JS file-->
+        <script src="index.js"></script>
+    </head>
+    <body onload="init()">
+        <header>
+            <div>
+                <h1>AI Algorithms Final Project</h1>
+            </div>
+            <div>
+                <button id="programBtn">Give Me A Program!</button>
+            </div>
+        </header>
+        <section>
+            <div id="program">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Exercise Name</th>
+                            <th>Equipment</th>
+                            <th>Weight</th>
+                            <th>Sets</th>
+                            <th>Repetitions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="programBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </body>
+</html>

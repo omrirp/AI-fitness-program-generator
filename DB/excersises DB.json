@@ -1,0 +1,969 @@
+[
+ {
+  "Id": 1,
+  "Name": "Squat",
+  "Primary Target": "Quadriceps",
+  "Secondary Target": "Glutes, Hamstrings, Core",
+  "Equipment": "Barbell",
+  "Weight": "Heavy",
+  "Is Complex": 1
+ },
+ {
+  "Id": 2,
+  "Name": "Goblet Squat",
+  "Primary Target": "Quadriceps",
+  "Secondary Target": "Glutes, Hamstrings",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 3,
+  "Name": "Leg Press",
+  "Primary Target": "Quadriceps",
+  "Secondary Target": "Quadriceps, Hamstrings",
+  "Equipment": "Machine",
+  "Weight": "Heavy",
+  "Is Complex": 1
+ },
+ {
+  "Id": 4,
+  "Name": "Dynamic Lunges",
+  "Primary Target": "Glutes",
+  "Secondary Target": "Quadriceps, Hamstrings",
+  "Equipment": "Dumbbells",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 5,
+  "Name": "Lunges",
+  "Primary Target": "Glutes",
+  "Secondary Target": "Quadriceps, Hamstrings",
+  "Equipment": "Dumbbells",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 6,
+  "Name": "Deadlift",
+  "Primary Target": "Glutes",
+  "Secondary Target": "Hamstrings, Core",
+  "Equipment": "Barbell",
+  "Weight": "Heavy",
+  "Is Complex": 1
+ },
+ {
+  "Id": 7,
+  "Name": "Romanian Deadlift",
+  "Primary Target": "Glutes",
+  "Secondary Target": "Hamstrings, Core",
+  "Equipment": "Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 8,
+  "Name": "Leg Curl",
+  "Primary Target": "Hamstrings",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 9,
+  "Name": "Bulgarian Split Squat",
+  "Primary Target": "Glutes",
+  "Secondary Target": "Quadriceps",
+  "Equipment": "Dumbbells",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 10,
+  "Name": "Calf Raise",
+  "Primary Target": "Calves",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 11,
+  "Name": "Step-ups",
+  "Primary Target": "Glutes",
+  "Secondary Target": "Quadriceps, Hamstrings",
+  "Equipment": "Bodyweight",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 12,
+  "Name": "Bench Step-ups",
+  "Primary Target": "Glutes",
+  "Secondary Target": "Quadriceps, Hamstrings",
+  "Equipment": "Bodyweight",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 13,
+  "Name": "Sumo Squat",
+  "Primary Target": "Inner Thighs",
+  "Secondary Target": "Quadriceps, Glutes",
+  "Equipment": "Dumbbell\/Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 14,
+  "Name": "Cossack Squat",
+  "Primary Target": "Quadriceps",
+  "Secondary Target": "Glutes, Inner Thighs",
+  "Equipment": "Bodyweight",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 15,
+  "Name": "Single-Leg Romanian Deadlift",
+  "Primary Target": "Glutes",
+  "Secondary Target": "Hamstrings",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 16,
+  "Name": "Leg Extension",
+  "Primary Target": "Quadriceps",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 17,
+  "Name": "Glute Bridge",
+  "Primary Target": "Glutes",
+  "Secondary Target": "Hamstrings",
+  "Equipment": "Bodyweight",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 18,
+  "Name": "Hamstring Curl",
+  "Primary Target": "Hamstrings",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 19,
+  "Name": "Calf Raises (Seated\/Standing)",
+  "Primary Target": "Calves",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 20,
+  "Name": "Side Lunge",
+  "Primary Target": "Glutes",
+  "Secondary Target": "Quadriceps, Inner Thighs, ",
+  "Equipment": "Bodyweight",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 21,
+  "Name": "Kettlebell Swing",
+  "Primary Target": "Glutes",
+  "Secondary Target": "Hamstrings, Core, Soulders, Forearms",
+  "Equipment": "Kettelebell",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 22,
+  "Name": "Barbell Row",
+  "Primary Target": "Lats",
+  "Secondary Target": "Traps",
+  "Equipment": "Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 23,
+  "Name": "Lat Pulldown",
+  "Primary Target": "Lats",
+  "Secondary Target": "Traps, Biceps",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 24,
+  "Name": "Pull-Ups",
+  "Primary Target": "Lats",
+  "Secondary Target": "Traps, Biceps",
+  "Equipment": "Bodyweight",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 25,
+  "Name": "Dumbbell Row",
+  "Primary Target": "Lats",
+  "Secondary Target": "Traps",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 26,
+  "Name": "T-Bar Row",
+  "Primary Target": "Lats",
+  "Secondary Target": "Traps",
+  "Equipment": "Machine",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 27,
+  "Name": "Cable Row",
+  "Primary Target": "Lats",
+  "Secondary Target": "Traps",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 28,
+  "Name": "Reverse Fly",
+  "Primary Target": "Lats",
+  "Secondary Target": "Traps, Shoulders",
+  "Equipment": "Dumbbell",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 29,
+  "Name": "Hyperextensions",
+  "Primary Target": "Lats",
+  "Secondary Target": "Glutes, Hamstrings",
+  "Equipment": "Bodyweight",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 30,
+  "Name": "Good Mornings",
+  "Primary Target": "Lats",
+  "Secondary Target": "Hamstrings",
+  "Equipment": "Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 31,
+  "Name": "Seated Cable Row",
+  "Primary Target": "Lats",
+  "Secondary Target": "Traps",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 32,
+  "Name": "Inverted Row",
+  "Primary Target": "Lats",
+  "Secondary Target": "Traps",
+  "Equipment": "Bodyweight",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 33,
+  "Name": "Pullover",
+  "Primary Target": "Lats",
+  "Equipment": "Dumbbell",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 34,
+  "Name": "Renegade Row",
+  "Primary Target": "Lats",
+  "Secondary Target": "Traps, Core",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 35,
+  "Name": "Straight Arm Pulldown",
+  "Primary Target": "Lats",
+  "Secondary Target": "Biceps, Traps",
+  "Equipment": "Cable Machine",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 36,
+  "Name": "Close-Grip Lat Pulldown",
+  "Primary Target": "Lats",
+  "Secondary Target": "Biceps, Traps",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 37,
+  "Name": "Wide-Grip Pull-Ups",
+  "Primary Target": "Lats",
+  "Secondary Target": "Biceps, Traps",
+  "Equipment": "Bodyweight",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 38,
+  "Name": "Bent-Over Row",
+  "Primary Target": "Lats",
+  "Secondary Target": "Traps",
+  "Equipment": "Barbell\/Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 39,
+  "Name": "Reverse Grip Bent-Over Row",
+  "Primary Target": "Lats",
+  "Secondary Target": "Biceps, Traps",
+  "Equipment": "Barbell\/Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 40,
+  "Name": "Single-Arm Dumbbell Row",
+  "Primary Target": "Lats",
+  "Secondary Target": "Traps",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 41,
+  "Name": "Cable Lat Pulldown",
+  "Primary Target": "Lats",
+  "Secondary Target": "Biceps, Traps",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 42,
+  "Name": "Eccentric Pull-Ups",
+  "Primary Target": "Lats",
+  "Secondary Target": "Biceps, Traps",
+  "Equipment": "Bodyweight",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 43,
+  "Name": "Eccentric Chin-Ups",
+  "Primary Target": "Lats",
+  "Secondary Target": "Biceps, Traps",
+  "Equipment": "Bodyweight",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 44,
+  "Name": "Eccentric Deadlifts",
+  "Primary Target": "Glutes",
+  "Secondary Target": "Hamstrings",
+  "Equipment": "Barbell",
+  "Weight": "Heavy",
+  "Is Complex": 1
+ },
+ {
+  "Id": 45,
+  "Name": "Eccentric Bent-Over Row",
+  "Primary Target": "Lats",
+  "Secondary Target": "Traps",
+  "Equipment": "Barbell\/Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 46,
+  "Name": "Eccentric Lat Pulldown",
+  "Primary Target": "Lats",
+  "Secondary Target": "Biceps, Traps",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 47,
+  "Name": "Rack Pulls",
+  "Primary Target": "Back",
+  "Secondary Target": "Glutes, Hamstrings",
+  "Equipment": "Barbell",
+  "Weight": "Heavy",
+  "Is Complex": 0
+ },
+ {
+  "Id": 48,
+  "Name": "Bench Press",
+  "Primary Target": "Chest",
+  "Secondary Target": "Triceps, Shoulders",
+  "Equipment": "Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 49,
+  "Name": "Dumbbell Bench Press",
+  "Primary Target": "Chest",
+  "Secondary Target": "Triceps, Shoulders",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 50,
+  "Name": "Incline Bench Press",
+  "Primary Target": "Upper Chest",
+  "Secondary Target": "Triceps, Shoulders",
+  "Equipment": "Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 51,
+  "Name": "Decline Bench Press",
+  "Primary Target": "Lower Chest",
+  "Secondary Target": "Triceps, Shoulders",
+  "Equipment": "Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 52,
+  "Name": "Push-Ups",
+  "Primary Target": "Chest",
+  "Secondary Target": "Triceps, Shoulders",
+  "Equipment": "Bodyweight",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 53,
+  "Name": "Dips",
+  "Primary Target": "Chest",
+  "Secondary Target": "Triceps, Shoulders",
+  "Equipment": "Bodyweight",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 54,
+  "Name": "Cable Chest Press",
+  "Primary Target": "Chest",
+  "Secondary Target": "Triceps",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 55,
+  "Name": "Chest Fly",
+  "Primary Target": "Chest",
+  "Secondary Target": "Shoulders",
+  "Equipment": "Dumbbell",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 56,
+  "Name": "Incline Dumbbell Press",
+  "Primary Target": "Upper Chest",
+  "Secondary Target": "Triceps, Shoulders",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 57,
+  "Name": "Decline Dumbbell Press",
+  "Primary Target": "Lower Chest",
+  "Secondary Target": "Triceps, Shoulders",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 58,
+  "Name": "Push-Up Variations",
+  "Primary Target": "Chest",
+  "Secondary Target": "Triceps, Shoulders",
+  "Equipment": "Bodyweight",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 59,
+  "Name": "Machine Chest Press",
+  "Primary Target": "Chest",
+  "Secondary Target": "Triceps, Shoulders",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 60,
+  "Name": "Pec Deck Fly",
+  "Primary Target": "Chest",
+  "Secondary Target": "Shoulders",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 61,
+  "Name": "Barbell Pullover",
+  "Primary Target": "Chest",
+  "Secondary Target": "Lats, Shoulders",
+  "Equipment": "Barbell",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 62,
+  "Name": "Dumbbell Pullover",
+  "Primary Target": "Lats",
+  "Secondary Target": "Shoulders",
+  "Equipment": "Dumbbell",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 63,
+  "Name": "Cable Crossover",
+  "Primary Target": "Chest",
+  "Secondary Target": "Shoulders",
+  "Equipment": "Cable Machine",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 64,
+  "Name": "Incline Cable Fly",
+  "Primary Target": "Upper Chest",
+  "Secondary Target": "Shoulders",
+  "Equipment": "Cable Machine",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 65,
+  "Name": "Decline Cable Fly",
+  "Primary Target": "Lower Chest",
+  "Secondary Target": "Shoulders",
+  "Equipment": "Cable Machine",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 66,
+  "Name": "Squeeze Press",
+  "Primary Target": "Chest",
+  "Secondary Target": "Triceps",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 67,
+  "Name": "Floor Press",
+  "Primary Target": "Chest",
+  "Secondary Target": "Triceps",
+  "Equipment": "Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 68,
+  "Name": "Medicine Ball Chest Pass",
+  "Primary Target": "Chest",
+  "Secondary Target": "Shoulders",
+  "Equipment": "Medicine Ball",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 69,
+  "Name": "Plyometric Push-Ups",
+  "Primary Target": "Chest",
+  "Secondary Target": "Triceps, Shoulders",
+  "Equipment": "Bodyweight",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 70,
+  "Name": "Smith Machine Bench Press",
+  "Primary Target": "Chest",
+  "Secondary Target": "Triceps, Shoulders",
+  "Equipment": "Smith Machine",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 71,
+  "Name": "Military Press",
+  "Primary Target": "Shoulders",
+  "Secondary Target": "Triceps",
+  "Equipment": "Barbell",
+  "Weight": "Heavy",
+  "Is Complex": 1
+ },
+ {
+  "Id": 72,
+  "Name": "Dumbbell Shoulder Press",
+  "Primary Target": "Shoulders",
+  "Secondary Target": "Triceps",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 73,
+  "Name": "Arnold Press",
+  "Primary Target": "Shoulders",
+  "Secondary Target": "Triceps",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 74,
+  "Name": "Barbell Overhead Press",
+  "Primary Target": "Shoulders",
+  "Secondary Target": "Triceps",
+  "Equipment": "Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 75,
+  "Name": "Seated Dumbbell Press",
+  "Primary Target": "Shoulders",
+  "Secondary Target": "Triceps",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 76,
+  "Name": "Push Press",
+  "Primary Target": "Shoulders",
+  "Secondary Target": "Triceps",
+  "Equipment": "Barbell",
+  "Weight": "Heavy",
+  "Is Complex": 1
+ },
+ {
+  "Id": 77,
+  "Name": "Lateral Raises",
+  "Primary Target": "Shoulders",
+  "Equipment": "Dumbbell",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 78,
+  "Name": "Front Raises",
+  "Primary Target": "Shoulders",
+  "Equipment": "Dumbbell",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 79,
+  "Name": "Bent-Over Lateral Raises",
+  "Primary Target": "Shoulders",
+  "Equipment": "Dumbbell",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 80,
+  "Name": "Upright Row",
+  "Primary Target": "Shoulders",
+  "Equipment": "Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 81,
+  "Name": "Shrugs",
+  "Primary Target": "Shoulders",
+  "Secondary Target": "Traps",
+  "Equipment": "Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 0
+ },
+ {
+  "Id": 82,
+  "Name": "Cable Shoulder Press",
+  "Primary Target": "Shoulders",
+  "Secondary Target": "Triceps",
+  "Equipment": "Cable Machine",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 83,
+  "Name": "Standing Military Press",
+  "Primary Target": "Shoulders",
+  "Secondary Target": "Triceps",
+  "Equipment": "Barbell",
+  "Weight": "Heavy",
+  "Is Complex": 1
+ },
+ {
+  "Id": 84,
+  "Name": "Machine Shoulder Press",
+  "Primary Target": "Shoulders",
+  "Secondary Target": "Triceps",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 85,
+  "Name": "Reverse Flyes",
+  "Primary Target": "Shoulders",
+  "Secondary Target": "Traps",
+  "Equipment": "Dumbbell",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 86,
+  "Name": "Face Pulls",
+  "Primary Target": "Shoulders",
+  "Secondary Target": "Traps",
+  "Equipment": "Cable Machine",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 87,
+  "Name": "Rear Delt Raises",
+  "Primary Target": "Shoulders",
+  "Equipment": "Dumbbell",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 88,
+  "Name": "Dumbbell Shrug",
+  "Primary Target": "Shoulders",
+  "Secondary Target": "Traps",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 0
+ },
+ {
+  "Id": 89,
+  "Name": "Kettlebell Press",
+  "Primary Target": "Shoulders",
+  "Secondary Target": "Triceps",
+  "Equipment": "Kettlebell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 90,
+  "Name": "Barbell Curl",
+  "Primary Target": "Biceps",
+  "Equipment": "Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 0
+ },
+ {
+  "Id": 91,
+  "Name": "Dumbbell Curl",
+  "Primary Target": "Biceps",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 0
+ },
+ {
+  "Id": 92,
+  "Name": "Hammer Curl",
+  "Primary Target": "Biceps",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 0
+ },
+ {
+  "Id": 93,
+  "Name": "Preacher Curl",
+  "Primary Target": "Biceps",
+  "Equipment": "Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 0
+ },
+ {
+  "Id": 94,
+  "Name": "Cable Curl",
+  "Primary Target": "Biceps",
+  "Equipment": "Cable",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 95,
+  "Name": "Concentration Curl",
+  "Primary Target": "Biceps",
+  "Equipment": "Dumbbell",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 96,
+  "Name": "EZ Bar Curl",
+  "Primary Target": "Biceps",
+  "Equipment": "EZ Bar",
+  "Weight": "Moderate",
+  "Is Complex": 0
+ },
+ {
+  "Id": 97,
+  "Name": "Incline Dumbbell Curl",
+  "Primary Target": "Biceps",
+  "Equipment": "Dumbbell",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 98,
+  "Name": "Spider Curl",
+  "Primary Target": "Biceps",
+  "Equipment": "Barbell",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 99,
+  "Name": "Close-Grip Bench Press",
+  "Primary Target": "Triceps",
+  "Secondary Target": "Shoulders",
+  "Equipment": "Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 100,
+  "Name": "Tricep Dips",
+  "Primary Target": "Triceps",
+  "Equipment": "Bodyweight",
+  "Weight": "Moderate",
+  "Is Complex": 1
+ },
+ {
+  "Id": 101,
+  "Name": "Skull Crushers",
+  "Primary Target": "Triceps",
+  "Equipment": "Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 0
+ },
+ {
+  "Id": 102,
+  "Name": "Tricep Pushdown",
+  "Primary Target": "Triceps",
+  "Equipment": "Cable",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 103,
+  "Name": "Overhead Tricep Extension",
+  "Primary Target": "Triceps",
+  "Equipment": "Dumbbell",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 104,
+  "Name": "Cable Tricep Extension",
+  "Primary Target": "Triceps",
+  "Equipment": "Cable",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 105,
+  "Name": "Tricep Kickbacks",
+  "Primary Target": "Triceps",
+  "Equipment": "Dumbbell",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 106,
+  "Name": "Diamond Push-Ups",
+  "Primary Target": "Triceps",
+  "Equipment": "Bodyweight",
+  "Weight": "Light",
+  "Is Complex": 1
+ },
+ {
+  "Id": 107,
+  "Name": "Reverse Grip Curl",
+  "Primary Target": "Biceps",
+  "Equipment": "Barbell",
+  "Weight": "Moderate",
+  "Is Complex": 0
+ },
+ {
+  "Id": 108,
+  "Name": "Hammer Curl Machine",
+  "Primary Target": "Biceps",
+  "Equipment": "Machine",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 109,
+  "Name": "Standing Tricep Extension",
+  "Primary Target": "Triceps",
+  "Equipment": "Dumbbell",
+  "Weight": "Moderate",
+  "Is Complex": 0
+ },
+ {
+  "Id": 110,
+  "Name": "Rope Tricep Pushdown",
+  "Primary Target": "Triceps",
+  "Equipment": "Cable",
+  "Weight": "Light",
+  "Is Complex": 0
+ },
+ {
+  "Id": 111,
+  "Name": "Hammer Curl Rope",
+  "Primary Target": "Biceps",
+  "Equipment": "Cable",
+  "Weight": "Light",
+  "Is Complex": 0
+ }
+]
