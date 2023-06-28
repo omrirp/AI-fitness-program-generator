@@ -4,29 +4,51 @@ var exercises = window.exercisesDB;
 function init() {
     console.log('page is up');
     let programBtn = document.getElementById('programBtn');
-    programBtn.addEventListener('click', generaterProgram);
+    programBtn.addEventListener('click', generaterProgram); 
 }
 
 // This function is responsible for generateing a fitness training program
 // by useing genetic algorithm
 function generaterProgram() {
+    const populationNum = 10;
+
+    // Generate population zero
     let population = generationZero();
-    console.log(population);
+    // Set generation zero for top population
+    let topPopulation = JSON.parse(JSON.stringify(population));
 
-    fitness(population[0]);
+    for (let i = 0; i < populationNum; i++) {
+        // Shuffle the population for
+        shuffleArray(population);
+        // Exchange exercises between pair of programs
+        exchange(population);
 
-    let result = population[0];
+        // Calculate fitness score after the exchange
+        population.forEach((program) => {
+            program.score = fitness(program.program);
+        });
+
+        // Keep the programs with the highest fitness score
+        naturalSelection(topPopulation, population);
+
+        // Set the new population
+        population = JSON.parse(JSON.stringify(topPopulation));
+    } // Repeat
+
+    topPopulation.sort((a, b) => b.score - a.score);
+    // return the program with the highest score
+    let result = topPopulation[0].program;
     renderProgram(result);
 }
 
 function generationZero() {
     let programs = [];
-    let programCount = 4; // Number of programs to generate
+    let programCount = 12; // Number of programs to generate
 
     for (let i = 0; i < programCount; i++) {
         // Random program size between 8 and 10
         let programSize = Math.floor(Math.random() * 5) + 6;
-        let program = [];
+        let program = { program: [], score: 0 };
 
         for (let j = 0; j < programSize; j++) {
             let randomIndex = Math.floor(Math.random() * exercises.length);
@@ -59,11 +81,14 @@ function generationZero() {
             }
 
             ex.reps = reps;
-            program.push(ex);
+            program.program.push(ex);
         }
-
         programs.push(program);
     }
+
+    programs.forEach((program) => {
+        program.score = fitness(program.program);
+    });
 
     return programs;
 }
@@ -85,7 +110,64 @@ function fitness(program) {
     let setsSum = program.map((exer) => exer.sets).reduce((accumulator, currentValue) => accumulator + currentValue);
     score -= Math.abs(optimalSetsNum - setsSum);
 
+    // Check if the number of unique muscles in PrimaryTarget are 8 or higher
+    // 8 represent the minimum number of exercises in a program
+    // for each exception below 8 decrease by 2 point
+    let uniqueMuscles = new Set(program.map((exer) => exer.primaryTarget));
+    let uniqueMusclesCount = uniqueMuscles.size;
+    if (uniqueMusclesCount < 8) {
+        score -= (8 - uniqueMusclesCount) * 2;
+    }
+
+    // Check if the number of unique muscles in secondaryTarget are 7 or higher
+    // for each exception below decrease by 1 point
+    let uniqueSecondaryMuscles = new Set(program.map((exer) => [...exer.secondaryTarget]).flat());
+    let uniqueSecondaryMusclesCount = uniqueSecondaryMuscles.size;
+    if (uniqueSecondaryMusclesCount < 7) {
+        score -= 10 - uniqueSecondaryMusclesCount;
+    }
+
     return score;
+}
+
+function exchange(population) {
+    for (let i = 0; i < population.length - 1; i += 2) {
+        let programA = population[i].program;
+        let programB = population[i + 1].program;
+
+        const smallerSize = Math.min(programA.length, programB.length);
+
+        // Generate a random index within the range of the smaller program
+        const exchangeIndex = Math.floor(Math.random() * smallerSize);
+
+        // Perform the exchange
+        for (let j = 0; j < exchangeIndex; j++) {
+            const temp = programA[j];
+            programA[j] = programB[j];
+            programB[j] = temp;
+        }
+    }
+}
+
+function naturalSelection(topPopulation, nexGeneration) {
+    // Merge the topPopulation and nexGeneration arrays
+    const mergedArray = [...topPopulation, ...nexGeneration];
+
+    // Sort the mergedArray in descending order based on program scores
+    mergedArray.sort((a, b) => b.score - a.score);
+
+    // Take the top 4 programs from mergedArray and assign them to topPopulation
+    topPopulation.length = 0; // Clear the topPopulation array
+    for (let i = 0; i < 12; i++) {
+        topPopulation.push(mergedArray[i]);
+    }
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
 }
 
 function renderProgram(results) {
