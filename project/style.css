@@ -1,6 +1,11 @@
 body {
-    font-family: Arial;
-    background-color: #f5f5f5;
+    font-family: sans-serif;
+    background-color: #616161;
+}
+
+#ai {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
 }
 
 header {
@@ -12,24 +17,29 @@ section {
     margin-top: 60px;
 }
 
-button {
+/* button {
     font-size: 30px;
     background-color: #0288d1;
     margin: 6px;
     padding: 14px;
     border-radius: 10px;
     transition-duration: 0.2s;
+    cursor: pointer;
 }
 
 button:hover {
     background-color: #4caf50;
     color: white;
     border: 2px solid white;
-}
+} */
 
 h1 {
-    font-size: 40px;
     font-weight: bold;
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffa500;
+    text-align: center;
+    margin: 20px 0;
 }
 
 table {
@@ -38,7 +48,7 @@ table {
 }
 
 table thead {
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid #ffa500;
 }
 
 table th {
@@ -46,7 +56,7 @@ table th {
     padding-right: 40px;
     font-size: 18px;
     font-weight: bold;
-    color: #455a64;
+    color: #ffa500;
 }
 /* Media query for screens smaller than 600px */
 @media (max-width: 600px) {
@@ -63,6 +73,9 @@ table td {
     margin-left: 10px;
     margin-right: 10px;
     border-bottom: 1px solid gray;
+    color: white;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 #short {
@@ -70,5 +83,90 @@ table td {
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #eceff1;
+    background-color: #757575;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #616161;
+}
+button {
+    border: none;
+    padding: 20px 40px;
+    font-size: 25px;
+    position: relative;
+    background: transparent;
+    color: #ffa500;
+    text-transform: uppercase;
+    border: 3px solid #ffa500;
+    cursor: pointer;
+    transition: all 0.7s;
+    overflow: hidden;
+    border-radius: 100px;
+}
+
+button:hover {
+    color: #000;
+}
+span {
+    transition: all 0.7s;
+    z-index: -1;
+}
+
+button .first {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 25%;
+    height: 100%;
+    background: #ffa500;
+}
+
+button:hover .first {
+    top: 0;
+    right: 0;
+}
+button .second {
+    content: '';
+    position: absolute;
+    left: 25%;
+    top: -100%;
+    height: 100%;
+    width: 25%;
+    background: #ffa500;
+}
+
+button:hover .second {
+    top: 0;
+    left: 50%;
+}
+
+button .third {
+    content: '';
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    top: 100%;
+    width: 25%;
+    background: #ffa500;
+}
+
+button:hover .third {
+    top: 0;
+    left: 25%;
+}
+
+button .fourth {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    background: #ffa500;
+}
+
+button:hover .fourth {
+    top: 0;
+    left: 0;
 }

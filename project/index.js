@@ -4,7 +4,7 @@ var exercises = window.exercisesDB;
 function init() {
     console.log('page is up');
     let programBtn = document.getElementById('programBtn');
-    programBtn.addEventListener('click', generaterProgram); 
+    programBtn.addEventListener('click', generaterProgram);
 }
 
 // This function is responsible for generateing a fitness training program
