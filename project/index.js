@@ -2,7 +2,6 @@
 var exercises = window.exercisesDB;
 
 function init() {
-    console.log('page is up');
     let programBtn = document.getElementById('programBtn');
     programBtn.addEventListener('click', generaterProgram);
 }
@@ -10,7 +9,7 @@ function init() {
 // This function is responsible for generateing a fitness training program
 // by useing genetic algorithm
 function generaterProgram() {
-    const populationNum = 10;
+    const populationNum = 15;
 
     // Generate population zero
     let population = generationZero();
@@ -47,7 +46,7 @@ function generationZero() {
 
     for (let i = 0; i < programCount; i++) {
         // Random program size between 8 and 10
-        let programSize = Math.floor(Math.random() * 5) + 6;
+        let programSize = Math.floor(Math.random() * 3) + 8;
         let program = { program: [], score: 0 };
 
         for (let j = 0; j < programSize; j++) {
@@ -127,7 +126,31 @@ function fitness(program) {
         score -= 10 - uniqueSecondaryMusclesCount;
     }
 
+    // Check if the number of complex exercises are 7 or higher
+    // for each exception below decrease by 2 points
+    let complexExercisesCount = program.filter((exer) => exer.isComplex == 1).length;
+    if (complexExercisesCount < 7) {
+        score -= (7 - complexExercisesCount) * 2;
+    }
+
+    let [light, moderate, heavy] = weightCounter(program);
+
     return score;
+}
+
+function weightCounter(program) {
+    let res = [0, 0, 0];
+    for (let i = 0; i < program.length; i++) {
+        let weight = program[i].weight;
+        if (weight == 'Light') {
+            res[0]++;
+        } else if (weight == 'Moderate') {
+            res[1]++;
+        } else {
+            res[2]++;
+        }
+    }
+    return res;
 }
 
 function exchange(population) {
