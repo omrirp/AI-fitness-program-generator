@@ -4,12 +4,14 @@ var exercises = window.exercisesDB;
 function init() {
     let programBtn = document.getElementById('programBtn');
     programBtn.addEventListener('click', generaterProgram);
+    let programDiv = document.getElementById('program');
+    programDiv.style.display = 'none';
 }
 
 // This function is responsible for generateing a fitness training program
 // by useing genetic algorithm
 function generaterProgram() {
-    const populationNum = 15;
+    const populationNum = 20;
 
     // Generate population zero
     let population = generationZero();
@@ -98,6 +100,15 @@ function fitness(program) {
     // Check if each muscle area contains 2 exercises in the program
     // for each exception (below or above 2) decrease 5 points from fitness score
     let areas = ['Legs', 'Chest', 'Shoulders', 'Back', 'Arms'];
+
+    // A full body workout must target all areas.
+    // if not fitness score will be zero
+    let targetedAreas = program.map((exer) => exer.area);
+    let missingAreas = areas.filter((area) => !targetedAreas.includes(area));
+    if (missingAreas.length > 0) {
+        return 0;
+    }
+
     areas.forEach((area) => {
         let filteredExercises = program.filter((exer) => exer.area == area).length;
         score -= Math.abs(filteredExercises - 2) * 5;
@@ -133,9 +144,40 @@ function fitness(program) {
         score -= (7 - complexExercisesCount) * 2;
     }
 
-    let [light, moderate, heavy] = weightCounter(program);
+    // Check how the distrubution of weight categories are close the standart division
+    let skewness = calculateSkewness(program);
+    const penaltyFactor = 10;
+    const desiredSkewness = 0.2;
+    let skewnessDeviation = Math.abs(skewness - desiredSkewness);
+    score -= skewnessDeviation * penaltyFactor;
+
+    score = score < 0 ? 0 : score;
 
     return score;
+}
+
+function calculateSkewness(program) {
+    let [light, moderate, heavy] = weightCounter(program);
+
+    let total = light + moderate + heavy;
+    // Calculate the mean of the weight distribution
+    // It is calculated by multiplying the counts of each weight category by their corresponding weights,
+    let mean = (light + 2 * moderate + 3 * heavy) / total;
+
+    // Calculate the median of the weight distribution
+    // taking into account the relative distribution of light, moderate, and heavy weights.
+    // The count of light weights is scaled by a factor of 2/3 to reflect their lower weight value.
+    let median = (2 * moderate + 3 * heavy + (light * 2) / 3) / total;
+
+    // Calculate the variance of the weight category distribution
+    // by summing the squared differences between each value and the mean,
+    // weighted by the count of exercises in each category
+    let standardDeviation = Math.sqrt(
+        (light * Math.pow(1 - mean, 2) + moderate * Math.pow(2 - mean, 2) + heavy * Math.pow(3 - mean, 2)) / total
+    );
+
+    // Return the skewness
+    return (3 * (mean - median)) / standardDeviation;
 }
 
 function weightCounter(program) {
@@ -194,41 +236,50 @@ function shuffleArray(array) {
 }
 
 function renderProgram(results) {
+    let programDiv = document.getElementById('program');
+    programDiv.style.display = 'block';
+
     let tbody = document.getElementById('programBody');
     tbody.innerHTML = '';
+    let areas = ['Legs', 'Chest', 'Shoulders', 'Back', 'Arms'];
 
-    for (let i = 0; i < results.length; i++) {
-        let tr = document.createElement('tr');
+    areas.forEach((area) => {
+        for (let i = 0; i < results.length; i++) {
+            if (results[i].area != area) {
+                continue;
+            }
+            let tr = document.createElement('tr');
 
-        // Exercise name handle
-        let exerciseNameTD = document.createElement('td');
-        exerciseNameTD.innerHTML = results[i].name;
+            // Exercise name handle
+            let exerciseNameTD = document.createElement('td');
+            exerciseNameTD.innerHTML = results[i].name;
 
-        // Eqipment handle
-        let equipmentTD = document.createElement('td');
-        equipmentTD.setAttribute('id', 'short');
-        equipmentTD.innerHTML = results[i].equipment;
+            // Eqipment handle
+            let equipmentTD = document.createElement('td');
+            equipmentTD.setAttribute('id', 'short');
+            equipmentTD.innerHTML = results[i].equipment;
 
-        // Weight handle
-        let weightTD = document.createElement('td');
-        weightTD.setAttribute('id', 'short');
-        weightTD.innerHTML = results[i].weight;
+            // Weight handle
+            let weightTD = document.createElement('td');
+            weightTD.setAttribute('id', 'short');
+            weightTD.innerHTML = results[i].weight;
 
-        // Sets handle
-        let setsTD = document.createElement('td');
-        setsTD.setAttribute('id', 'short');
-        setsTD.innerHTML = results[i].sets;
+            // Sets handle
+            let setsTD = document.createElement('td');
+            setsTD.setAttribute('id', 'short');
+            setsTD.innerHTML = results[i].sets;
 
-        // Repetitions handle
-        let repetitionsTD = document.createElement('td');
-        repetitionsTD.setAttribute('id', 'short');
-        repetitionsTD.innerHTML = results[i].reps;
+            // Repetitions handle
+            let repetitionsTD = document.createElement('td');
+            repetitionsTD.setAttribute('id', 'short');
+            repetitionsTD.innerHTML = results[i].reps;
 
-        tr.appendChild(exerciseNameTD);
-        tr.appendChild(equipmentTD);
-        tr.appendChild(weightTD);
-        tr.appendChild(setsTD);
-        tr.appendChild(repetitionsTD);
-        tbody.appendChild(tr);
-    }
+            tr.appendChild(exerciseNameTD);
+            tr.appendChild(equipmentTD);
+            tr.appendChild(weightTD);
+            tr.appendChild(setsTD);
+            tr.appendChild(repetitionsTD);
+            tbody.appendChild(tr);
+        }
+    });
 }
