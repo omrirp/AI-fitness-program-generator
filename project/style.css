@@ -170,3 +170,10 @@ button:hover .fourth {
     top: 0;
     left: 0;
 }
+
+.areaHeader {
+    text-align: center;
+    font-weight: bold;
+    color: #ffa500;
+    background-color: #4e4d4d;
+}

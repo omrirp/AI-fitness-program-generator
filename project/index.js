@@ -22,7 +22,7 @@ function generaterProgram() {
         // Shuffle the population for
         shuffleArray(population);
         // Exchange exercises between pair of programs
-        exchange(population);
+        exchange(population, i);
 
         // Calculate fitness score after the exchange
         population.forEach((program) => {
@@ -100,6 +100,7 @@ function fitness(program) {
     // Check if each muscle area contains 2 exercises in the program
     // for each exception (below or above 2) decrease 5 points from fitness score
     let areas = ['Legs', 'Chest', 'Shoulders', 'Back', 'Arms'];
+    let bigAreas = ['Legs', 'Chest', 'Shoulders', 'Back'];
 
     // A full body workout must target all areas.
     // if not fitness score will be zero
@@ -109,16 +110,40 @@ function fitness(program) {
         return 0;
     }
 
-    areas.forEach((area) => {
+    // Check for duplicate exercises by id
+    // If duplicates found, set score to 0 and return
+    let exerciseIds = new Set();
+    let hasDuplicates = program.some((exer) => {
+        if (exerciseIds.has(exer.id)) {
+            return true; // Duplicate exercise found
+        } else {
+            exerciseIds.add(exer.id);
+            return false;
+        }
+    });
+    if (hasDuplicates) {
+        return 0;
+    }
+
+    // Check if all big muscle areas appear twice
+    // for each exception (below or above 2) decrease 5 points from fitness score
+    bigAreas.forEach((area) => {
         let filteredExercises = program.filter((exer) => exer.area == area).length;
         score -= Math.abs(filteredExercises - 2) * 5;
     });
 
+    // Check if the program contains at least 1 Arms exercise
+    // decreare 5 points from fitness score if not
+    let armsExercisesCount = program.filter((exer) => exer.area == 'Arms').length;
+    if (armsExercisesCount == 0) {
+        score -= 5;
+    }
+
     // Check if the number of sets is closer to 22 which is the optimal number that we have decided
-    // for each exception (below or above 2) decrease 1 points from fitness score
+    // for each exception (below or above 2) decrease 2 points from fitness score
     const optimalSetsNum = 22;
     let setsSum = program.map((exer) => exer.sets).reduce((accumulator, currentValue) => accumulator + currentValue);
-    score -= Math.abs(optimalSetsNum - setsSum);
+    score -= Math.abs(optimalSetsNum - setsSum) * 2;
 
     // Check if the number of unique muscles in PrimaryTarget are 8 or higher
     // 8 represent the minimum number of exercises in a program
@@ -172,9 +197,7 @@ function calculateSkewness(program) {
     // Calculate the variance of the weight category distribution
     // by summing the squared differences between each value and the mean,
     // weighted by the count of exercises in each category
-    let standardDeviation = Math.sqrt(
-        (light * Math.pow(1 - mean, 2) + moderate * Math.pow(2 - mean, 2) + heavy * Math.pow(3 - mean, 2)) / total
-    );
+    let standardDeviation = Math.sqrt((light * Math.pow(1 - mean, 2) + moderate * Math.pow(2 - mean, 2) + heavy * Math.pow(3 - mean, 2)) / total);
 
     // Return the skewness
     return (3 * (mean - median)) / standardDeviation;
@@ -195,10 +218,15 @@ function weightCounter(program) {
     return res;
 }
 
-function exchange(population) {
+function exchange(population, generationNum) {
     for (let i = 0; i < population.length - 1; i += 2) {
         let programA = population[i].program;
         let programB = population[i + 1].program;
+
+        if (generationNum > 12) {
+            shuffleArray(programA);
+            shuffleArray(programB);
+        }
 
         const smallerSize = Math.min(programA.length, programB.length);
 
@@ -244,6 +272,14 @@ function renderProgram(results) {
     let areas = ['Legs', 'Chest', 'Shoulders', 'Back', 'Arms'];
 
     areas.forEach((area) => {
+        let areaHeaderTr = document.createElement('tr');
+        let areaHeaderTd = document.createElement('td');
+        areaHeaderTd.setAttribute('colspan', 5);
+        areaHeaderTd.setAttribute('class', 'areaHeader');
+        areaHeaderTd.innerHTML = area;
+        areaHeaderTr.appendChild(areaHeaderTd);
+        tbody.appendChild(areaHeaderTr);
+
         for (let i = 0; i < results.length; i++) {
             if (results[i].area != area) {
                 continue;
