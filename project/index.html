@@ -11,6 +11,10 @@
         <link rel="stylesheet" href="style.css" />
         <!--Import main JS file-->
         <script src="index.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.0/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     </head>
     <body onload="init()">
         <header>
@@ -29,7 +33,7 @@
         </header>
         <section>
             <div id="program">
-                <table>
+                <table id="programTbl">
                     <thead>
                         <tr>
                             <th>Exercise Name</th>
@@ -41,7 +45,6 @@
                     </thead>
                     <tbody id="programBody"></tbody>
                 </table>
-            </div>
         </section>
     </body>
 </html>

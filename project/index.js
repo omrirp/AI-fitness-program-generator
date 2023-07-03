@@ -176,6 +176,7 @@ function fitness(program) {
     let skewnessDeviation = Math.abs(skewness - desiredSkewness);
     score -= skewnessDeviation * penaltyFactor;
 
+    // Make sure that score is non negative number
     score = score < 0 ? 0 : score;
 
     return score;
@@ -187,17 +188,17 @@ function calculateSkewness(program) {
     let total = light + moderate + heavy;
     // Calculate the mean of the weight distribution
     // It is calculated by multiplying the counts of each weight category by their corresponding weights,
-    let mean = (light + 2 * moderate + 3 * heavy) / total;
+    let mean = (light + 2 * moderate + 2.5 * heavy) / total;
 
     // Calculate the median of the weight distribution
     // taking into account the relative distribution of light, moderate, and heavy weights.
     // The count of light weights is scaled by a factor of 2/3 to reflect their lower weight value.
-    let median = (2 * moderate + 3 * heavy + (light * 2) / 3) / total;
+    let median = (2 * moderate + 2.5 * heavy + (light * 2) / 3) / total;
 
     // Calculate the variance of the weight category distribution
     // by summing the squared differences between each value and the mean,
     // weighted by the count of exercises in each category
-    let standardDeviation = Math.sqrt((light * Math.pow(1 - mean, 2) + moderate * Math.pow(2 - mean, 2) + heavy * Math.pow(3 - mean, 2)) / total);
+    let standardDeviation = Math.sqrt((light * Math.pow(1 - mean, 2) + moderate * Math.pow(2 - mean, 2) + heavy * Math.pow(2.5 - mean, 2)) / total);
 
     // Return the skewness
     return (3 * (mean - median)) / standardDeviation;
@@ -223,6 +224,7 @@ function exchange(population, generationNum) {
         let programA = population[i].program;
         let programB = population[i + 1].program;
 
+        // Shuffle each program for an attepmt of overcomeing local optima
         if (generationNum > 12) {
             shuffleArray(programA);
             shuffleArray(programB);
