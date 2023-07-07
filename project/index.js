@@ -108,11 +108,10 @@ function generationZero() {
 function fitness(program) {
     let score = 100;
 
-    // Check if each muscle area contains 2 exercises in the program
-    // for each exception (below or above 2) decrease 5 points from fitness score
     let areas = ['Legs', 'Chest', 'Shoulders', 'Back', 'Arms'];
     let bigAreas = ['Legs', 'Chest', 'Shoulders', 'Back'];
 
+    // ----- 1 -----
     // A full body workout must target all areas.
     // if not fitness score will be zero
     let targetedAreas = program.map((exer) => exer.area);
@@ -121,6 +120,7 @@ function fitness(program) {
         return 0;
     }
 
+    // ----- 2 -----
     // Check for duplicate exercises by id
     // If duplicates found, set score to 0 and return
     let exerciseIds = new Set();
@@ -136,6 +136,7 @@ function fitness(program) {
         return 0;
     }
 
+    // ----- 3 -----
     // Check if all big muscle areas appear twice
     // for each exception (below or above 2) decrease 5 points from fitness score
     bigAreas.forEach((area) => {
@@ -143,6 +144,7 @@ function fitness(program) {
         score -= Math.abs(filteredExercises - 2) * 5;
     });
 
+    // ----- 4 -----
     // Check if the program contains at least 1 Arms exercise
     // decreare 5 points from fitness score if not
     let armsExercisesCount = program.filter((exer) => exer.area == 'Arms').length;
@@ -150,12 +152,14 @@ function fitness(program) {
         score -= 5;
     }
 
+    // ----- 5 -----
     // Check if the number of sets is closer to 22 which is the optimal number that we have decided
     // for each exception (below or above 2) decrease 2 points from fitness score
     const optimalSetsNum = 22;
     let setsSum = program.map((exer) => exer.sets).reduce((accumulator, currentValue) => accumulator + currentValue);
     score -= Math.abs(optimalSetsNum - setsSum) * 2;
 
+    // ----- 6 -----
     // Check if the number of unique muscles in PrimaryTarget are 8 or higher
     // 8 represent the minimum number of exercises in a program
     // for each exception below 8 decrease by 2 point
@@ -165,6 +169,7 @@ function fitness(program) {
         score -= (8 - uniqueMusclesCount) * 2;
     }
 
+    // ----- 7 -----
     // Check if the number of unique muscles in secondaryTarget are 7 or higher
     // for each exception below decrease by 1 point
     let uniqueSecondaryMuscles = new Set(program.map((exer) => [...exer.secondaryTarget]).flat());
@@ -173,6 +178,7 @@ function fitness(program) {
         score -= 10 - uniqueSecondaryMusclesCount;
     }
 
+    // ----- 8 -----
     // Check if the number of complex exercises are 7 or higher
     // for each exception below decrease by 2 points
     let complexExercisesCount = program.filter((exer) => exer.isComplex == 1).length;
@@ -180,6 +186,7 @@ function fitness(program) {
         score -= (7 - complexExercisesCount) * 2;
     }
 
+    // ----- 9 -----
     // Check how the distrubution of weight categories are close the standart division
     let skewness = calculateSkewness(program);
     const penaltyFactor = 10;
@@ -209,7 +216,9 @@ function calculateSkewness(program) {
     // Calculate the variance of the weight category distribution
     // by summing the squared differences between each value and the mean,
     // weighted by the count of exercises in each category
-    let standardDeviation = Math.sqrt((light * Math.pow(1 - mean, 2) + moderate * Math.pow(2 - mean, 2) + heavy * Math.pow(2.5 - mean, 2)) / total);
+    let standardDeviation = Math.sqrt(
+        (light * Math.pow(1 - mean, 2) + moderate * Math.pow(2 - mean, 2) + heavy * Math.pow(2.5 - mean, 2)) / total
+    );
 
     // Return the skewness
     return (3 * (mean - median)) / standardDeviation;
@@ -333,4 +342,12 @@ function renderProgram(results) {
             tbody.appendChild(tr);
         }
     });
+
+    let areaHeaderTr = document.createElement('tr');
+    let areaHeaderTd = document.createElement('td');
+    areaHeaderTd.setAttribute('colspan', 5);
+    areaHeaderTd.setAttribute('class', 'areaHeader');
+    areaHeaderTd.innerHTML = 'Abs exercise of your choise';
+    areaHeaderTr.appendChild(areaHeaderTd);
+    tbody.appendChild(areaHeaderTr);
 }
