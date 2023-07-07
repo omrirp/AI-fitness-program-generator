@@ -6,6 +6,17 @@ function init() {
     programBtn.addEventListener('click', generaterProgram);
     let programDiv = document.getElementById('program');
     programDiv.style.display = 'none';
+
+    var modal = document.getElementById('myModal');
+    var targetDiv = document.getElementById('warningDiv');
+
+    modal.addEventListener('mouseleave', function () {
+        modal.style.display = 'none';
+    });
+
+    targetDiv.addEventListener('mouseenter', function () {
+        modal.style.display = 'block';
+    });
 }
 
 // This function is responsible for generateing a fitness training program
@@ -19,7 +30,7 @@ function generaterProgram() {
     let topPopulation = JSON.parse(JSON.stringify(population));
 
     for (let i = 0; i < populationNum; i++) {
-        // Shuffle the population for
+        // Shuffle the population
         shuffleArray(population);
         // Exchange exercises between pair of programs
         exchange(population, i);
@@ -274,6 +285,7 @@ function renderProgram(results) {
     let areas = ['Legs', 'Chest', 'Shoulders', 'Back', 'Arms'];
 
     areas.forEach((area) => {
+        // Set up header for muscle area
         let areaHeaderTr = document.createElement('tr');
         let areaHeaderTd = document.createElement('td');
         areaHeaderTd.setAttribute('colspan', 5);
@@ -312,6 +324,7 @@ function renderProgram(results) {
             repetitionsTD.setAttribute('id', 'short');
             repetitionsTD.innerHTML = results[i].reps;
 
+            // Append row to the table
             tr.appendChild(exerciseNameTD);
             tr.appendChild(equipmentTD);
             tr.appendChild(weightTD);

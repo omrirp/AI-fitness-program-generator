@@ -16,6 +16,9 @@ header {
 section {
     margin-top: 60px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -161,4 +164,41 @@ button:hover .fourth {
     font-weight: bold;
     color: #ffa500;
     background-color: #4e4d4d;
+}
+
+#program {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #888;
+    border: 3px solid #7a2c2c;
+    border-radius: 16px;
+    width: 500px;
+    padding: 40px;
+}
+
+#warningDiv {
+    display: inline-block;
+    border: 3px solid #7a2c2c;
+    border-radius: 16px;
+    color: #7a2c2c;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#warningDiv:hover + .modal {
+    display: block;
+}
+
+ul li.large {
+    font-size: 20px;
+    text-align: left;
 }

@@ -11,10 +11,7 @@
         <link rel="stylesheet" href="style.css" />
         <!--Import main JS file-->
         <script src="index.js"></script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.0/html2canvas.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+        <script src="modal.js"></script>
     </head>
     <body onload="init()">
         <header>
@@ -31,6 +28,23 @@
                 </button>
             </div>
         </header>
+        <section>
+            <div id="warningDiv">
+                <h3>WARNING!</h3>
+            </div>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <h2>BE AWARE OF THE FOLLOWING</h2>
+                  <p>
+                    <ul>
+                        <li class="large">It is highly recommended to seek guidance from a professional trainer when designing a fitness program</ui>
+                        <li class="large">The categorization of light, moderate, or heavy weights depends on individual abilities and should be determined accordingly</li>
+                        <li class="large">This program assumes that the user is in good health, free from injuries, and capable of performing the exercises with proper form</li>
+                    </ul>
+                  </p>
+                </div>
+              </div>
+        </section>
         <section>
             <div id="program">
                 <table id="programTbl">
